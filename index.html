@@ -215,11 +215,16 @@
                     </div>
                     <div class="form-group">
                         <label for="">Pilih Modul</label>
-                        <select name="" id="" class="form-control" required>
+                        <select name="" class="form-control" id="module-options" required>
                             <option value="">-- Pilih Modul--</option>
-                            <option value="modul A">Modul A</option>
-                            <option value="modul B">Modul B</option>
+                            <option value="modul A" module-price="1200000">Modul A</option>
+                            <option value="modul B" module-price="1500000">Modul B</option>
                         </select>
+                    </div>
+
+                    <div class="total-price-container" id="total-price-container">
+                        <div>Total</div>
+                        <div id="total">Rp 1,200,000</div>
                     </div>
 
                     <button type="submit" class="btn-submit">Kirim Formulir</button>
@@ -255,7 +260,21 @@
         const phoneInput = window.intlTelInput(phoneInputField, {
             initialCountry: 'ID',
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        });        
+        });      
+        
+        $('#module-options').change(function(){
+            var amount = $('option:selected', this).attr('module-price');
+            if( amount ){
+                var locale = 'id';
+                var options = {style: 'currency', currency: 'idr', minimumFractionDigits: 0, maximumFractionDigits: 2};
+                var formatter = new Intl.NumberFormat(locale, options);
+                $('#total-price-container').css('display', 'flex');
+                $('#total').text(formatter.format(amount));
+            }else{
+                $('#total-price-container').hide();
+                $('#total').text(0);
+            }
+        });
     </script>
 
     <!-- Midtrans -->

@@ -413,6 +413,16 @@ nav{
     margin-top: 10px;
 }
 
+.total-price-container{
+    font-size: 22px;
+    font-weight: 600;
+    color: $primary_blue;
+    display: none;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+}
+
 .btn-submit{
     margin-top: 70px;
     width: 100%;
