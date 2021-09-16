@@ -342,6 +342,25 @@ nav{
         }
     }
 }
+.cta-to-form{
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    background-color: $primary_red;
+    color: white !important;
+    text-decoration: none;
+    margin-top: 110px;
+    margin-bottom: 70px;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 20px;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        background-color: $secondary_red;
+    }
+}
 
 #registration{
     padding-top: 90px;
